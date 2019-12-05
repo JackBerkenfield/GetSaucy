@@ -1,0 +1,369 @@
+
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title> Get Saucy | Home</title>
+
+<!--The following meta tag contains the site’s description -->
+<meta name="description" content="Explore the hot and spicy chile pepper sauces of the California Central Coast." />
+
+<!--The following meta tag contains the site’s keywords -->
+<meta name="keywords" content="Hot, Serano, SLO, Spicy, Capsaicin, Sauce, San Luis Obispo, Pepper, Chili Pepper, Chili" />
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro|Ubuntu&display=swap" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar dissapear on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon-->
+<!--The following adds favicon images -- be sure to verify paths-->
+
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+    
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logo.png" width="150" height="150" alt="The Get Saucy Logo"/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Central Coast Story</a>
+        </li>
+	   <li>
+          <a href="#gal">From Plant to Pantry</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Central Coast Sauces</a>
+        </li>
+        <li>
+          <a href="#vid">A Raucous Tale</a>
+			</li>
+      <li>
+          <a href="#num">Find Your Sauce</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--<div class="container">
+	
+</div>
+<!--fade in main image-->
+ <div class="titleBG">
+    <img class="title" onload="this.style.opacity='1';" src="img/title.png" alt="hand holding chile peppers fades in"/>  
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">The Central Coast Story</h2>
+<article>
+<p class="tab">Over the past few years the global interest in tongue melting spice has been on the rise. In 2017 the hot sauce market was rapidly expanding, with projected annual revenues of over a billion dollars. In 2019, the global demand for fiery sauces has continued to skyrocket, and the variety of sauces available has become almost overwhelming. As the trend grows globally, new sauces appear on the market with inspirations from all over the globe, inciting cultural fusions never before seen in modern cuisine. These sauces vary wildly in flavor and heat, and are giving the world a glimpse into the characteristics of cultural cuisines from around the world. With the hot sauce trend showing no signs of letting up, it is important for Chiliheads to keep up with their local hot sauce industry. <br><br> Here, heat seekers can discover what atomic condiments the central coast has to offer. </p>
+<p class="tab"><a href="#gal">The Process</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h3 id="gal">From Plant to Pantry</h3>
+<article><!--beginning of article-->
+<p class="tab">The sauce making process can often involve thousands of peppers at a time when done on an industrial scale. Although many people do not know how their hot sauces are made, the Chilihead trend has inspired some to try their hand at hot sauce making, with varying levels of success. </p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="Bundles of fresh serano peppers piled at a booth during the Saturday morning
+Madonna Famers market. Madonna Farmers Market 10/12/19"/>
+<img src="img/2.jpg" width="100%" height="100%" alt="Mixed tubs of fresh picked peppers are pre-packed by the Chavez Family Farms
+before every market. Madonna Farmers Market 10/12/19"/>
+<img src="img/3.jpg" width="100%" height="100%" alt="Francisco Velasquez (not pictured) says that the Jalapeños from his farm are “still
+good, but getting close to the end of the season.” Jalapeños are usually harvested
+through the end of October. Madonna Famers Market 10/12/19"/>
+<img src="img/4.jpg" width="100%" height="100%" alt="Dried arbor peppers and diced onions are the first ingredients in a homemade
+Louisiana style hot sauce. Jaz Lail’s home kitchen in San Luis Obispo 10/20/19 "/>
+<img src="img/5.jpg" width="100%" height="100%" alt="Adding citrus to hot sauce helps to cut the flavor of the base, in this case carrot juice,
+leaving the chiles at the forefront of the sauce’s flavor. Jaz Lail’s (pictured) home kitchen
+in SLO 10/20/19 "/>
+<img src="img/6.jpg" width="100%" height="100%" alt="After blending, the hot sauce is boiled in order to burn off water and concentrate the
+flavor and spice of the sauce as much as possible. Jaz Lail’s (pictured) home kitchen in
+SLO 10/20/19"/>
+<img src="img/7.jpg" width="100%" height="100%" alt="Once the sauce has boiled and sat, it just needs to cool before being served. Jaz Lail’s
+home kitchen in SLO 10/20/19 "/>
+<img src="img/8.jpg" width="100%" height="100%" alt=" 'I enjoy making hot sauce because it allows me a creative yet fun outlet. Nashville s
+tyle sauce is unique because its one of the few sauces that can really give you a kick in
+the ass but has a touch of sweetness. It is also one of the thicker hot sauces so it goes with
+meats and other proteins better,' Jaz Lail said. Jaz Lail, Business Finance Senior, at his
+home kitchen in SLO 10/20/19"/>
+<img src="img/9.jpg" width="100%" height="100%" alt="Jaz Lail ensures that he keeps the seeds of these Jalapeños intact while chopping
+them. Jaz Lail, Business Finance Senior, at his home kitchen in SLO 10/20/19 "/>
+<img src="img/10.jpg" width="100%" height="100%" alt="Adding fresh peppers to a sauce can improve both the flavor and the heat of the
+sauce. Jaz Lail, Business Finance Senior, at his home kitchen in SLO 10/20/19"/>
+    <img src="img/11.jpg" width="100%" height="100%" alt="A sauce with fresh peppers in addition to dry peppers requires more time on the stove
+in order to cook down. Jaz Lail, Business Finance Senior, at his home kitchen in SLO
+10/20/19 "/>
+    <img src="img/12.jpg" width="100%" height="100%" alt="A bottle of fresh-made Nashville sauce cools alongside an equally fresh bottle of
+Louisiana style sauce. Jaz Lail’s home kitchen in SLO 10/20/19"/>
+    <img src="img/13.jpg" width="100%" height="100%" alt="For some, having a variety of hot sauces on the table is part of what makes a meal
+enjoyable. Jaz Lail’s home kitchen in SLO 10/20/19 "/>
+    <img src="img/14.jpg" width="100%" height="100%" alt="Bon Temps in San Luis Obispo is no stranger to the positive impact hot sauce can
+have on food. Bon Temps Creole Cafe in San Luis Obispo 10/21/19"/>
+    <img src="img/15.jpg" width="100%" height="100%" alt="Bon Temps has two different sauces of their very own, a green and a red sauce. Both
+are made in bulk in Arizona and labelled in store by Bon Temps. Bon Temps Creole
+Cafe in San Luis Obispo 10/21/19"/>
+    <img src="img/16.jpg" width="100%" height="100%" alt="Bon Temps also makes their own Vinegar and Chile Seco sauce in house, which is
+used primarily on their collared greens. Bon Temps Creole Cafe in San Luis Obispo
+10/21/19"/>
+    <img src="img/17.jpg" width="100%" height="100%" alt="Sheila Zarate, a server at Bon Temps, said that they “go through the red [sauce] a lot.”
+The recipe for both in house sauces has been the same since Sheila started 11 years
+ago. Bon Temps Creole Cafe in San Luis Obispo 10/21/19"/>
+    <img src="img/18.jpg" width="100%" height="100%" alt="Like any good restaurant, Bon Temps offers their customers a choice. If the house
+sauces don’t do it for you, there are a variety of name brand sauces to turn too. Bon
+Temps Creole Cafe in San Luis Obispo 10/21/19"/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">The Sauces</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+    
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">The Central Coast Sauces</h2>
+<article>
+  <p class="tab">Paul Smith owner of Monkey Spit Hot Sauce, John Hanson from Splash Cafe, and Phil Lang owner of Bon Temps (Left to right) describe their hot sauces:<br>Click to hear about the staples of central coast hot sauce (Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/1.mp3" type="audio/mpeg" />
+</audio>
+            
+<audio id="audio_2">
+    <source src="audio/2.mp3" type="audio/mpeg" />
+</audio>
+            
+<audio id="audio_3">
+	<source src="audio/3.mp3" type="audio/mpeg" />
+</audio>
+<img src="img/rollover/1R.jpg" class="rollover" alt="Monkey spit sauce selection rolls over into photo of Paul Smith" onMouseOver="this.src='img/rollover/1.jpg'" onMouseOut="this.src='img/rollover/1R.jpg'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/2R.jpg" class="rollover" alt="Raucous daucus sauces roll over into photo of John Hanson" onMouseOver="this.src='img/rollover/2.jpg'" onMouseOut="this.src='img/rollover/2R.jpg'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+     
+<img src="img/rollover/3R.jpg" class="rollover" alt="Bon Temps sauces roll over into photo of Phil Lang" onMouseOver="this.src='img/rollover/3.jpg'" onMouseOut="this.src='img/rollover/3R.jpg'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+
+	</div> 
+</div>
+
+<p class="tab"><a href="#vid">The Story</a></p>		
+</article>
+</div>
+
+<!--end of audio section-->
+    
+    <!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">A Raucous Tale</h2>
+<article>
+<p class="tab">Joanne Currie is one of the founders of Splash Cafe and the creator of Raucous Daucus carrot pepper sauce. Both the restaurant and the sauce have become classics of central coast cuisine. This is how the sauce came to be: </p>	
+<video width="100%" height="100%" poster="img/videostill.png" controls>
+<source src="img/video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">The Map</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+<!--beginning of map section-->
+<div class="row whiteBG">
+<h2 id="num">Find Your Sauce</h2>
+    <iframe width="100%" height="635" src="https://viewer.mapme.com/dbf72429-09d3-4f0d-a88a-a6143d2aaacd" frameborder="0" allowfullscreen allow="fullscreen; geolocation" scrolling="no" style="border: 1px solid lightgrey; border-radius: 2px;"></iframe>
+</div>
+<!--end of new section-->
+	
+<!--beginning of footer-->
+<footer class="footer">
+<h2>Never Eat Without Heat </h2>
+Get Saucy | A Guide to Central Coast Hot Sauce | <a href="img/stiletile.pdf">Style Tile</a> | Contact: <a href="mailto:jack.berkenfield@gmail.com">
+  jack.berkenfield@gmail.com</a>
+</footer>
+
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+</html>
